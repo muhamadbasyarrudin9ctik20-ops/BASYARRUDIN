@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dinzz Haircutt</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0b0b0b;
+    color:white;
+}
+
+/* NAV */
+nav{
+    padding:15px 20px;
+    background:#111;
+    text-align:center;
+    color:#f5b041;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1621605815971-fbc98d665033')
+    center/cover no-repeat;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#f5b041;
+    color:black;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* SECTION */
+.section{
+    padding:40px 20px;
+    text-align:center;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;
+    margin-top:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    border:2px solid #222;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+    border-color:#f5b041;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+DINZZ HAIRCUTT
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<h1>Dinzz Haircutt ✂️</h1>
+<p>Modern • Clean • Professional</p>
+<a href="booking.php" class="btn">Booking Sekarang</a>
+</div>
+</div>
+
+<!-- GALLERY -->
+<div class="section">
+
+<h2 style="color:#f5b041;">📸 Hasil Cukur Kami</h2>
+
+<div class="gallery">
+
+    <img src="images/hasil-cukur1.jpeg">
+    <img src="images/hasil-cukur2.jpeg">
+    <img src="images/hasil-cukur3.jpeg">
+    <img src="images/hasil-cukur4.jpeg">
+    <img src="images/hasil-cukur5.jpeg">
+    <img src="images/hasil-cukur6.jpeg">
+    <img src="images/hasil-cukur7.jpeg">
+    <img src="images/hasil-cukur8.jpeg">
+
+</div>
+
+</div>
+
+</body>
+</html>

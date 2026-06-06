@@ -1,0 +1,233 @@
+<?php
+include 'koneksi.php';
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Booking Dinzz Haircutt</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- ICON -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0b0b0b;
+    color:white;
+    padding:20px;
+}
+
+/* BACK */
+.back{
+    color:#f5b041;
+    text-decoration:none;
+    display:block;
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.header h1{
+    color:#f5b041;
+    font-size:22px;
+}
+
+.header p{
+    color:#aaa;
+    font-size:12px;
+}
+
+/* CONTAINER */
+.container{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(12px);
+    padding:18px;
+    border-radius:16px;
+}
+
+/* PRICE */
+.price-box{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid #222;
+}
+
+.price-box span{
+    color:#f5b041;
+    font-weight:bold;
+}
+
+/* INPUT STYLE */
+.input-box{
+    position:relative;
+    margin-top:10px;
+}
+
+.input-box i{
+    position:absolute;
+    left:12px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#f5b041;
+}
+
+.input-box input,
+.input-box select{
+    width:100%;
+    padding:12px 12px 12px 40px;
+    border:none;
+    border-radius:10px;
+    background:#1c1c1c;
+    color:white;
+    outline:none;
+}
+
+/* FOCUS */
+.input-box input:focus,
+.input-box select:focus{
+    border:1px solid #f5b041;
+    box-shadow:0 0 8px rgba(245,176,65,0.4);
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:#f5b041;
+    font-weight:bold;
+    cursor:pointer;
+    color:black;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    body{padding:12px;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="index.php" class="back">← Kembali</a>
+
+<div class="header">
+<h1>BOOKING DINZZ HAIRCUTT</h1>
+<p>Reservasi cepat • profesional • modern</p>
+</div>
+
+<div class="container">
+
+<!-- PRICE LIST -->
+<div class="card">
+
+<h3 style="color:#f5b041;">💰 Daftar Harga</h3>
+
+<div class="price-box">
+<span>Classic Cut</span>
+<b>Rp 20.000</b>
+</div>
+
+<div class="price-box">
+<span>Fade Cut</span>
+<b>Rp 20.000</b>
+</div>
+
+<div class="price-box">
+<span>Hair Coloring</span>
+<b>Coming Soon</b>
+</div>
+
+</div>
+
+<!-- FORM -->
+<div class="card">
+
+<h3 style="color:#f5b041;">📅 Form Booking</h3>
+
+<form method="POST" action="proses_booking.php">
+
+<!-- NAMA -->
+<div class="input-box">
+<i class="fa-solid fa-user"></i>
+<input type="text" name="nama" placeholder="Nama Lengkap" required>
+</div>
+
+<!-- WA -->
+<div class="input-box">
+<i class="fa-brands fa-whatsapp"></i>
+<input type="text" name="no_hp" placeholder="Nomor WhatsApp" required>
+</div>
+
+<!-- LAYANAN -->
+<div class="input-box">
+<i class="fa-solid fa-scissors"></i>
+<select name="layanan" required>
+<option>Pilih Layanan</option>
+<option>Classic Cut</option>
+<option>Fade Cut</option>
+<option>Premium Style</option>
+<option>Hair Coloring</option>
+</select>
+</div>
+
+<!-- TANGGAL -->
+<div class="input-box">
+<i class="fa-solid fa-calendar-days"></i>
+<input type="date" name="tanggal" required>
+</div>
+
+<!-- JAM -->
+<div class="input-box">
+<i class="fa-solid fa-clock"></i>
+<input type="time" name="jam" required>
+</div>
+
+<button type="submit">
+Booking Sekarang
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?php
+include '../koneksi.php';
+
+$id = $_GET['id'];
+
+mysqli_query($conn,
+"UPDATE booking SET status_booking='Confirmed' WHERE id='$id'"
+);
+
+header("Location:booking.php");
+?>

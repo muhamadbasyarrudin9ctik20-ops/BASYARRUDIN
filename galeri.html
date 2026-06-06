@@ -1,0 +1,30 @@
+<?php
+include '../koneksi.php';
+
+if(isset($_POST['upload'])){
+
+    $foto = $_FILES['foto']['name'];
+    $tmp = $_FILES['foto']['tmp_name'];
+
+    move_uploaded_file($tmp,"../images/".$foto);
+
+    mysqli_query($conn,"INSERT INTO galeri (foto) VALUES ('$foto')");
+}
+
+$data = mysqli_query($conn,"SELECT * FROM galeri ORDER BY id DESC");
+?>
+
+<h2>Upload Hasil Cukur</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="foto" required>
+    <button name="upload">Upload</button>
+</form>
+
+<hr>
+
+<h3>Galeri</h3>
+
+<?php while($g = mysqli_fetch_array($data)) { ?>
+    <img src="../images/<?= $g['foto']; ?>" width="120">
+<?php } ?>

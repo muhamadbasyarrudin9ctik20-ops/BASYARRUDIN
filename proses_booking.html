@@ -1,0 +1,30 @@
+<?php
+include 'koneksi.php';
+
+$nama = $_POST['nama'];
+$no_hp = $_POST['no_hp'];
+$layanan = $_POST['layanan'];
+$tanggal = $_POST['tanggal'];
+$jam = $_POST['jam'];
+
+/* SIMPAN KE DATABASE */
+mysqli_query($conn,
+"INSERT INTO booking (nama,no_hp,layanan,tanggal,jam,status_booking)
+VALUES ('$nama','$no_hp','$layanan','$tanggal','$jam','Pending')"
+);
+
+/* PESAN WHATSAPP UNTUK ADMIN */
+$adminWA = "62895428133520"; // <-- ganti dengan nomor WA kamu
+
+$pesan =
+"🔥 BOOKING BARBERSHOP DINZZ 🔥%0A".
+"Nama: $nama%0A".
+"No HP: $no_hp%0A".
+"Layanan: $layanan%0A".
+"Tanggal: $tanggal%0A".
+"Jam: $jam%0A%0A".
+"Status: Pending";
+
+header("Location: https://wa.me/$adminWA?text=$pesan");
+exit;
+?>
